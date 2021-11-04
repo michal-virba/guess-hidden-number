@@ -24,6 +24,9 @@ const displayNumber = function (number) {
 const displayScore = function (score) {
   document.querySelector('.score').textContent = score;
 };
+const checkButtonDisabled = function (trueOrFalse) {
+  document.querySelector('.check').disabled = trueOrFalse;
+};
 
 //event pre tlačidlo na skontrolovanie čísla
 document.querySelector('.check').addEventListener('click', function () {
@@ -40,6 +43,8 @@ document.querySelector('.check').addEventListener('click', function () {
     displayNumber(secretNumber);
     changeBodyBackgroundColor('#60b347');
     changeNumberWidth('30rem');
+    //button disabled
+    checkButtonDisabled(true);
 
     //nové najvyššie skóre
     if (score > highScore) {
@@ -59,6 +64,8 @@ document.querySelector('.check').addEventListener('click', function () {
       displayMessage('🤪💩 Koniec hry, skús ešte raz!');
       displayScore(0);
       changeBodyBackgroundColor('#B03B3B');
+      //button disabled
+      checkButtonDisabled(true);
     }
   }
 });
@@ -74,4 +81,6 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
   changeBodyBackgroundColor('#222');
   changeNumberWidth('15rem');
+  //button enabled
+  checkButtonDisabled(false);
 });
