@@ -40,6 +40,7 @@ document.querySelector('.check').addEventListener('click', function () {
     displayNumber(secretNumber);
     changeBodyBackgroundColor('#60b347');
     changeNumberWidth('30rem');
+
     //nové najvyššie skóre
     if (score > highScore) {
       highScore = score;
